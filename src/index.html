@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Resume - Reyes Herrera Jr</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+
+  <!-- build:css inline production/css/style.min.css -->
+  <link href="css/style.css" rel="stylesheet" type="text/css">
+  <!-- /build -->
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-67703197-1', 'auto');
+  ga('send', 'pageview');
+  </script>
+
+</head>
+<body unresolved id="body2"> 
+  <nav role="navigation" class="navbar navbar-default navbar-fixed-top">
+      <div class="container-fluid">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+              <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle">
+                  <span class="sr-only">Toggle navigation</span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+                  <span class="icon-bar"></span>
+              </button>
+              <h3 class="brand-logo brand-logo-top">
+              REYES HERRERA JR</h3>
+              <h3 class="brand-logo brand-slash"><small>/</small></h3>
+              <h3 class="brand-logo brand-logo-bottom"><small>FRONT-END WEB DEVELOPER</small></h3>
+          </div>
+          <!-- Collection of nav links and other content for toggling -->
+          <div id="navbarCollapse" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav navbar-right">
+                  <li data-toggle="collapse" data-target=".navbar-collapse"><a data-scroll href="#body2">Home</a></li>
+                  <li data-toggle="collapse" data-target=".navbar-collapse"><a data-scroll href="#header">Skills</a></li>
+                  <li data-toggle="collapse" data-target=".navbar-collapse"><a data-scroll href="#workExperience">Work Experience</a></li>
+                  <li data-toggle="collapse" data-target=".navbar-collapse"><a data-scroll href="#projects">Projects</a></li>
+                  <li data-toggle="collapse" data-target=".navbar-collapse"><a data-scroll href="#education">Education</a></li>
+                  <li data-toggle="collapse" data-target=".navbar-collapse"><a data-scroll href="#mapDiv">Map</a></li>
+              </ul>
+          </div>
+      </div>
+  </nav>
+  <div class="jumbotron" role="img" aria-label="a crowd cheering for Reyes">
+    <div class="container">
+      <h1 id="bioMsg">Hello World</h1>
+      <p>I'm originally from the Central Valley, I now reside in Silicon Valley.</p>
+      <a class="btn btn-info btn-lg" href="mailto:reyesh@gmail.com?subject=We're interested in hiring you!" role="button">Hire Me!</a>
+    </div>
+  </div>
+
+  <div id="main" class="container">
+
+    <div id="skills" class="row well">
+        <i class="fa fa-wrench section-icons"></i>
+        <h3 class="section-header">Skills at a Glance <span class="badge"></span></h3>
+    </div>
+
+    <div id="workExperience" class="row well gray">
+        <i class="fa fa-briefcase section-icons"></i>
+        <h2 class="section-header">Work Experience</h2>
+    </div>
+
+    <div id="projects" class="row well">
+      <div class="section-header">
+        <i class="fa fa-code section-icons"></i>
+        <h2>Projects</h2>
+      </div>
+    </div>
+    <div id="education" class='row well gray'>
+      <div class="section-header">
+        <i class="fa fa-graduation-cap section-icons"></i>
+        <h2>Education</h2>
+      </div>
+    </div>
+    <div id="activities" class='row well gray'>
+      <div class="section-header">
+        <i class="fa fa-bicycle section-icons"></i>
+        <h2>Activities</h2>
+      </div>
+    </div>
+    <div id="mapDiv" class='row well'>
+      <div class="section-header">
+        <i class="fa fa-map-signs section-icons"></i>
+        <h2>Where I've Lived and Worked</h2>
+      </div>
+    </div>
+    <div id="letsConnect" class='row well dark-gray'>
+      <div class="section-header">
+        <i class="fa fa-user-plus section-icons"></i>
+        <h2 class='orange center-text'>Let's Connect</h2>
+      </div>
+      <ul id="footerContacts" class="flex-box text-center"></ul>
+    </div>
+  </div>
+
+  <script src="js/model.js"></script>
+  <script src="js/viewHelper.js"></script>
+  <script src="js/app.js"></script>
+
+
+</body>
+</html>
