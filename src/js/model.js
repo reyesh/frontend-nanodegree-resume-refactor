@@ -14,10 +14,6 @@ var resumeData = {
       "location": "Sunnyvale,+CA,+USA"
     },
 
-    "skills" : [
-      "HTML", "CSS", "javaScript", "PHP", "MySQL", "JSON", "JQuery", "bootstrap", "git/github", "Photoshop", "Illustrator", "Premiere", "IP networking", "Linux", "scripting (bash, perl, sed, awk)", "Windows", "Mac OS X"
-    ],
-
     "bioPic": "",
 
     "msg": [
@@ -37,7 +33,11 @@ var resumeData = {
     ]
   },
 
-  "jobs": [
+  "skill" : [
+      "HTML", "CSS", "javaScript", "PHP", "MySQL", "JSON", "JQuery", "bootstrap", "git/github", "Photoshop", "Illustrator", "Premiere", "IP networking", "Linux", "scripting (bash, perl, sed, awk)", "Windows", "Mac OS X"
+    ],
+
+  "work": [
     {
       "employer": "Smart Hospitality Corporation",
       "employer_url": "#",
@@ -52,11 +52,11 @@ var resumeData = {
     }
   ],
 
-  "projects": [
+  "project": [
     {
       "title": "Interactive Resume",
-      "ID": "p1",
-      "dates": "May 2015",
+      "id": "p1",
+      "date": "May 2015",
       "description": "Interactive resume using javaScript, jQuery, JSON, and the bootstrap",
       "image": "../images/p1tn.png",
       "url": "https://github.com/reyesh/frontend-nanodegree-resume",
@@ -68,8 +68,8 @@ var resumeData = {
     },
     {
       "title": "Classic Arcade Game Clone",
-      "ID": "p2",
-      "dates": "June 2015",
+      "id": "p2",
+      "date": "June 2015",
       "description": "With a game engine, and the visual assets I had to recreate the classic game Frogger",
       "image": "../images/arcade-tn.png",
       "url": "https://github.com/reyesh/frontend-nanodegree-arcade-game",
@@ -81,8 +81,8 @@ var resumeData = {
     },
     {
       "title": "Ask a flowchart: Should I quit my tech job?",
-      "ID": "p3",
-      "dates": "August 2015",
+      "id": "p3",
+      "date": "August 2015",
       "description": "Simple web app, an interactive flowchart that answers the question \"Should I quit my job?\"",
       "image": "",
       "url": "http://reye.sh/f1/",
@@ -95,8 +95,8 @@ var resumeData = {
     },    
     {
       "title": "Drawing with Random",
-      "ID": "p4",
-      "dates": "May 2015",
+      "id": "p4",
+      "date": "May 2015",
       "description": "JavaScript class to create randomize paintings using html5 canvas",
       "image": "../images/p3tn.png",
       "url": "https://github.com/reyesh/html5-canvas-drawing-with-random",
@@ -108,16 +108,16 @@ var resumeData = {
     }
   ],
 
-  "education": [
+  "edu": [
       {
-          "name": "Fresno State University",
-          "location": "Fresno, CA, USA",
-          "degree": "BA",
-          "date": "July 1998 - May 2003",
-          "major": "Graphic Design",
-          "minor": "Computer Science",
-          "highlight": "Web Languages, Data Structures"
-      },
+          "name": "Udacity",
+          "location": "Mountain View, CA, USA",
+          "degree": "Nanodegree",
+          "date": "March 2014 - Present",
+          "major": "Front End Web Developer",
+          "minor": "",
+          "highlight": "Went beyond project requirments"
+      },  
       {
           "name": "O'Reily School of Technology",
           "location": "http://www.oreillyschool.com",
@@ -128,17 +128,17 @@ var resumeData = {
           "highlight": "Set up Mondrian OLAP server on home server"
       },
       {
-          "name": "Udacity",
-          "location": "Mountain View, CA, USA",
-          "degree": "Nanodegree",
-          "date": "March 2014 - Present",
-          "major": "Front End Web Developer",
-          "minor": "",
-          "highlight": "Went beyond project requirments"
+          "name": "Fresno State University",
+          "location": "Fresno, CA, USA",
+          "degree": "BA",
+          "date": "July 1998 - May 2003",
+          "major": "Graphic Design",
+          "minor": "Computer Science",
+          "highlight": "Web Languages, Data Structures"
       }
   ],
 
-  "activities": [
+  "conf": [
       {
         "title": "Debugging Accessibility with Alice Boxhall",
         "level": "attendee",
@@ -150,12 +150,6 @@ var resumeData = {
         "level": "attendee",
         "date": "October 2015",
         "url": "http://www.meetup.com/sfhtml5/events/219966898/"
-      },
-      {
-        "title": "Udacity nanodegree hackathon",
-        "level": "participant",
-        "date": "April 2015",
-        "url": "https://www.udacity.com/"
       },
       {
         "title": "SF day of civic hacking",
@@ -174,6 +168,12 @@ var resumeData = {
         "level": "attendee",
         "date": "June 2015",
         "url": "https://plus.google.com/events/cvnt1o4c5ekca0do0a1ci2roof4?authkey=CPOlop2riP_-hwE&mkt_tok=3RkMMJWWfF9wsRols6vPZKXonjHpfsX/4uQvT/rn28M3109ad%2BrmPBy73YoJWp8na%2BqWCgseOrQ8ll0LV9ewRs0Uqaw="
+      },
+      {
+        "title": "Udacity nanodegree hackathon",
+        "level": "participant",
+        "date": "April 2015",
+        "url": "https://www.udacity.com/"
       },
       {
         "title": "Fresno State Wine Label Content",
