@@ -55,36 +55,27 @@
           </div>
       </div>
   </nav>
+
+  <div id="mapDiv">
+  </div>
+
   <div class="jumbotron" role="img" aria-label="a crowd cheering for Reyes">
     <div class="container">
-      <h1 id="bioMsg">Hello World</h1>
+      <img class="profile-img" src="img/profile.jpg">
+      <h1>Bio Messages</h1>
       <p>I'm originally from the Central Valley, I now reside in Silicon Valley.</p>
       <a class="btn btn-info btn-lg" href="mailto:reyesh@gmail.com?subject=We're interested in hiring you!" role="button">Hire Me!</a>
     </div>
   </div>
 
   <div id="main" class="container">
-
-    <div id="mapDiv" class='row well'>
-      <div class="section-header">
-        <i class="fa fa-map-signs section-icons"></i>
-        <h2>Where I've Lived and Worked</h2>
-      </div>
-    </div>
-
-    <div id="letsConnect" class='row well dark-gray'>
-      <div class="section-header">
-        <i class="fa fa-user-plus section-icons"></i>
-        <h2 class='orange center-text'>Let's Connect</h2>
-      </div>
-      <ul id="footerContacts" class="flex-box text-center"></ul>
-    </div>
-
   </div>
 
   <script src="js/model.js"></script>
   <script src="js/viewHelper.js"></script>
   <script src="js/app.js"></script>
+  <script src="js/resumeMap.js"></script>
+  <script src="http://maps.googleapis.com/maps/api/js?libraries=places&callback=mapsResume"></script>
 
 
 </body>

@@ -58,7 +58,7 @@ var resumeData = {
       "id": "p1",
       "date": "May 2015",
       "description": "Interactive resume using javaScript, jQuery, JSON, and the bootstrap",
-      "image": "../images/p1tn.png",
+      "image": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Project&w=250&h=150",
       "url": "https://github.com/reyesh/frontend-nanodegree-resume",
       "mdID": "myp1",
       "mdLabel": "myModalLabel1",
@@ -71,7 +71,7 @@ var resumeData = {
       "id": "p2",
       "date": "June 2015",
       "description": "With a game engine, and the visual assets I had to recreate the classic game Frogger",
-      "image": "../images/arcade-tn.png",
+      "image": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Project&w=250&h=150",
       "url": "https://github.com/reyesh/frontend-nanodegree-arcade-game",
       "mdID": "myp2",
       "mdLabel": "myModalLabel2",
@@ -84,7 +84,7 @@ var resumeData = {
       "id": "p3",
       "date": "August 2015",
       "description": "Simple web app, an interactive flowchart that answers the question \"Should I quit my job?\"",
-      "image": "",
+      "image": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Project&w=250&h=150",
       "url": "http://reye.sh/f1/",
       "gh_url": "https://github.com/reyesh/Ask-a-flowchart-should-i-quit-my-tech-job-",
       "mdID": "myp2",
@@ -98,7 +98,7 @@ var resumeData = {
       "id": "p4",
       "date": "May 2015",
       "description": "JavaScript class to create randomize paintings using html5 canvas",
-      "image": "../images/p3tn.png",
+      "image": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Project&w=250&h=150",
       "url": "https://github.com/reyesh/html5-canvas-drawing-with-random",
       "mdID": "myp4",
       "mdLabel": "myModalLabel4",
@@ -111,30 +111,48 @@ var resumeData = {
   "edu": [
       {
           "name": "Udacity",
-          "location": "Mountain View, CA, USA",
+          "url": "https://www.udacity.com",
+          "location": "online study",
           "degree": "Nanodegree",
           "date": "March 2014 - Present",
           "major": "Front End Web Developer",
           "minor": "",
-          "highlight": "Went beyond project requirments"
+          "highlight": "Went beyond project requirments",
+          "bp": [
+                 "Exceeded Project Specifications",
+                 "Object-Oriented JavaScript",
+                 "JavaScript Design Patterns"
+                ]     
       },  
       {
           "name": "O'Reily School of Technology",
-          "location": "http://www.oreillyschool.com",
+          "url": "http://www.oreillyschool.com",
+          "location": "online study",
           "degree": "Certification",
           "date": "Jan 2013 - Nov 2013",
           "major": "Database Administration",
-          "minor": "",
-          "highlight": "Set up Mondrian OLAP server on home server"
+          "minor": "Linux Administration",
+          "highlight": "Set up Mondrian OLAP server on home linux server",
+          "bp": [
+                  "Mondrian OLAP server",
+                  "Intro to SQL & Administering MySQL server",
+                  "Mondrian OLAP on Linux server"
+                ]     
       },
       {
           "name": "Fresno State University",
+          "url": "http://www.fresnostate.edu",          
           "location": "Fresno, CA, USA",
-          "degree": "BA",
+          "degree": "Bachelor of Arts",
           "date": "July 1998 - May 2003",
           "major": "Graphic Design",
           "minor": "Computer Science",
-          "highlight": "Web Languages, Data Structures"
+          "highlight": "Web Languages, Data Structures",
+          "bp": [
+                  "Illustrator & Photoshop",
+                  "Web Languages",
+                  "Data Structues & algorithms"
+                ]               
       }
   ],
 

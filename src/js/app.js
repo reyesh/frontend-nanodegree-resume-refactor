@@ -23,6 +23,7 @@ var Engine = (function (global){
 		init: function(){
 			view.sectionOrder();
 			view.renderSections();
+			view.mapStuff();
 		},
 
 		renderSections: function(){
@@ -38,6 +39,9 @@ var Engine = (function (global){
 			}
 			if(haveProj){
 				view.renderProj();
+			}
+			if(haveConf){
+				view.renderConf();
 			}
 
 		},
@@ -135,7 +139,7 @@ var Engine = (function (global){
   			    //loop for bullet points
   			    for(j in workObj[i].bp){
   			    	 formattedWorkBpli =  formattedWorkBpli + HTMLworkBpli.replace("%data%", workObj[i].bp[j]);
-  			    }
+  			    }  			    
   			    formattedWorkBP = HTMLworkBpul.replace("%data%", formattedWorkBpli);
 
   			    formatedWorkEntry = formattedEmployer + formattedTitle + formattedDate + formattedLocation + formattedDes + formattedWorkBP;
@@ -145,7 +149,29 @@ var Engine = (function (global){
 
 		renderEdu: function(){
 			var eduObj = octopus.getSectionData("edu");
-			console.log(eduObj);
+			var formattedEduEntry = "";
+			var formattedHlBp = "";
+			for(i in eduObj){
+				$("#edu").append(HTMLschoolStart);
+				formattedEduName =  HTMLschoolName.replace("%data%", eduObj[i].name);
+				formattedEduName = 	formattedEduName.replace("%data2%", eduObj[i].url);
+				formattedEduDegree = HTMLschoolDegree.replace("%data%", eduObj[i].degree);
+				formattedEduDate = HTMLschoolDates.replace("%data%", eduObj[i].date);
+				formattedEduLoc = HTMLschoolLocation.replace("%data%", eduObj[i].location);
+				formattedEduMaj = HTMLschoolMaj.replace("%data%", eduObj[i].major);
+				formattedEduMin = HTMLschoolMin.replace("%data%", eduObj[i].minor);
+
+				//clear this variable after even loop
+				formattedHlBp = "";
+				for (j in eduObj[i].bp){
+					console.log(i+" "+eduObj[i].bp[j]);
+					formattedHlBp = formattedHlBp + HTMLschoolhighlightBp.replace("%data%", eduObj[i].bp[j]);
+				}
+				formattedHlUL = HTMLschoolhighlight.replace("%data%", formattedHlBp);
+
+				formattedEduEntry = formattedEduName + formattedEduDegree + formattedEduLoc + formattedEduDate + formattedEduMaj + formattedEduMin + formattedHlUL;
+				$(".education-entry:last").append(formattedEduEntry);
+			}
 		},
 
 		renderProj: function(){
@@ -158,9 +184,26 @@ var Engine = (function (global){
 				formattedProjectTitle = formattedProjectTitle.replace("%data2%", projObj[i].url);
 				formattedProjectDate = HTMLprojectDate.replace("%data%", projObj[i].date);
 				formattedProjectDes = HTMLprojectDescription.replace("%data%", projObj[i].description);
-				formattedProjEntry = formattedProjectTitle + formattedProjectDate + formattedProjectDes;
+				formattedProjImg = HTMLprojectImage.replace("%data%", projObj[i].image);
+				formattedProjEntry = formattedProjectTitle + formattedProjectDate + formattedProjImg + formattedProjectDes;
 				$(".project-entry:last").append(formattedProjEntry);
 			}
+		},
+
+		renderConf: function(){
+			var confObj = octopus.getSectionData("conf");
+			for(i in confObj){
+				$("#conf").append(HTMLactivitiesStart);
+				formattedActTitle = HTMLactivitiesTitle.replace("%data%", confObj[i].title);
+				formattedActTitle = formattedActTitle.replace("%data2%", confObj[i].level);
+				formattedActTitle = formattedActTitle.replace("%data3%", confObj[i].url);
+				formattedActDate = HTMLactivitiesDates.replace("%data%", confObj[i].date);
+				formattedActEntry = formattedActTitle + formattedActDate;
+				$(".activities-entry:last").append(formattedActEntry);
+			}
+		},
+		mapStuff: function(){
+			$("#mapDiv").append('<div id="map"></div>');
 		}
 
 	};

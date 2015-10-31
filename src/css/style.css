@@ -43,6 +43,15 @@
   margin: 2px;
 }
 
+.activities-entry {
+    clear: left;
+}
+.profile-img{
+  width: 200px;
+  height: 200px;
+  float: left;
+  margin: 25px;
+}
 @media only screen and (max-width: 414px) {
   .jumbotron {
       background-image: url('../images/bkgnd-crowd-mobile-2x.png');
