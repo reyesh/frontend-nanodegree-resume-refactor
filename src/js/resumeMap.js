@@ -66,25 +66,30 @@
         locations.jobs = [];
 
         // puts my current location into the bio object
-        locations.bio[0] = { "location":bio.contacts.location,
+        locations.bio[0] = { "location":resumeData.bio.contacts.location,
                              "name": "Currently Live Here"};
-
+        //console.log(resumeData.bio.contacts.location);
         // iterates through school and added the location plus name of school
         // to the schools object
 
-        for(var i=0;i<education.schools.length;i++){
-          locations.schools[i]={"name":education.schools[i].name,
-                               "location":education.schools[i].location};
+        for(var i=0;i<resumeData.bio.travel.length;i++){
+          locations.bio[i+1]={"name": "Travel",
+                               "location":resumeData.bio.travel[i]};
+        }
+
+        for(var i=0;i<resumeData.edu.length;i++){
+          locations.schools[i]={"name":resumeData.edu[i].name,
+                               "location":resumeData.edu[i].location};
         }
 
         // iterates through jobs and added the location plus employer's name
         // to the jobs object
 
-        for(var i=0;i<work.jobs.length;i++){
-          locations.jobs[i] = {"name":work.jobs[i].employer,
-                               "location":work.jobs[i].location};
+        for(var i=0;i<resumeData.work.length;i++){
+          locations.jobs[i] = {"name":resumeData.work[i].employer,
+                               "location":resumeData.work[i].location};
         }
-
+        console.log(locations);
         return locations;
       }
 

@@ -26,10 +26,10 @@ var resumeData = {
 
     "travel" : [
       "20.656031, -101.794904",
-      "Cuerámaro, Mexico",
-      "San Luis Potosi, Mexico",
-      "Guanajuato, Gto. Mexico",
-      "Colorines Rincón de La Bolsa, Álvaro Obregón, 01849 Mexico City, Federal District"
+      "Cuerámaro, Guanajuato, Mexico",
+      "San Luis Potosi, San Luis Potosí, Mexico",
+      "Guanajuato, Gto., Mexico",
+      "Rincón de la Bolsa, Ciudad de México, D.F., Mexico"
     ]
   },
 
@@ -112,7 +112,7 @@ var resumeData = {
       {
           "name": "Udacity",
           "url": "https://www.udacity.com",
-          "location": "online study",
+          "location": "Mountain View, CA, USA",
           "degree": "Nanodegree",
           "date": "March 2014 - Present",
           "major": "Front End Web Developer",
@@ -127,7 +127,7 @@ var resumeData = {
       {
           "name": "O'Reily School of Technology",
           "url": "http://www.oreillyschool.com",
-          "location": "online study",
+          "location": "Champaign, IL, USA",
           "degree": "Certification",
           "date": "Jan 2013 - Nov 2013",
           "major": "Database Administration",
