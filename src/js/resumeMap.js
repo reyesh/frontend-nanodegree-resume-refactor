@@ -73,8 +73,8 @@
         // to the schools object
 
         for(var i=0;i<resumeData.bio.travel.length;i++){
-          locations.bio[i+1]={"name": "Travel",
-                               "location":resumeData.bio.travel[i]};
+          locations.bio[i+1]={"name": resumeData.bio.travel[i],
+                               "location": resumeData.bio.travel[i] };
         }
 
         for(var i=0;i<resumeData.edu.length;i++){

@@ -1,4 +1,4 @@
-#body2 {
+#body {
   /*margin-top: 90px;*/
 }
 
@@ -52,6 +52,16 @@
   float: left;
   margin: 25px;
 }
+
+.jumbotron a {
+  padding: 5px 11px;
+  font-size: 35px;
+}
+
+.education-entry p {
+  margin-bottom: 0px;
+}
+
 @media only screen and (max-width: 414px) {
   .jumbotron {
       background-image: url('../images/bkgnd-crowd-mobile-2x.png');

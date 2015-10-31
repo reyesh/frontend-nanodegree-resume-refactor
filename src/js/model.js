@@ -134,9 +134,9 @@ var resumeData = {
           "minor": "Linux Administration",
           "highlight": "Set up Mondrian OLAP server on home linux server",
           "bp": [
-                  "Mondrian OLAP server",
                   "Intro to SQL & Administering MySQL server",
-                  "Mondrian OLAP on Linux server"
+                  "Mondrian OLAP on Linux server",
+                  "Learned about Linux Admin"                  
                 ]     
       },
       {
