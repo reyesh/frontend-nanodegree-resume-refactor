@@ -23,7 +23,7 @@ var Engine = (function (global){
 		init: function(){
 			view.sectionOrder();
 			view.renderSections();
-			view.mapStuff();
+			view.renderMap();
 		},
 
 		renderSections: function(){
@@ -104,7 +104,7 @@ var Engine = (function (global){
 				    case "conf":
 				    	haveConf = true;
 						$("#main").append( view.secTemplate("Activities", "conf", "fa-users", 2) );
-				        break;
+				        break;		        
 				}
 
 			}
@@ -202,8 +202,12 @@ var Engine = (function (global){
 				$(".activities-entry:last").append(formattedActEntry);
 			}
 		},
-		mapStuff: function(){
+		renderMap: function(){
+			
+			$("#main").append( view.secTemplate("Where I've Lived, Worked, and Studied", "mapDiv", "fa-map-marker", 2) );
 			$("#mapDiv").append('<div id="map"></div>');
+			 google.maps.event.addDomListener(window, 'load', mapsResume);
+
 		}
 
 	};
