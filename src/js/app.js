@@ -204,7 +204,7 @@ var Engine = (function (global){
 		},
 		renderMap: function(){
 			
-			$("#main").append( view.secTemplate("Where I've Lived, Worked, and Studied", "mapDiv", "fa-map-marker", 2) );
+			$("#main").append( view.secTemplate("Where I've Lived, Worked, Studied & Traveled", "mapDiv", "fa-map-marker", 2) );
 			$("#mapDiv").append('<div id="map"></div>');
 			 google.maps.event.addDomListener(window, 'load', mapsResume);
 

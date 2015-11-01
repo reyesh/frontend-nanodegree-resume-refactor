@@ -54,10 +54,10 @@ var resumeData = {
 
   "project": [
     {
-      "title": "Interactive Resume",
+      "title": "Interactive Resume (old)",
       "id": "p1",
       "date": "May 2015",
-      "description": "Interactive resume using javaScript, jQuery, JSON, and the bootstrap",
+      "description": "Interactive resume using javaScript, jQuery, JSON, and Bootstrap",
       "image": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Project&w=250&h=150",
       "url": "https://github.com/reyesh/frontend-nanodegree-resume",
       "mdID": "myp1",
@@ -105,7 +105,21 @@ var resumeData = {
       "mdImage": "../images/200x600p3.png",
       "alt": "image of Drawing with Random project",
       "mdDes": "Used object oriented JS, functional class pattern with shared methods. Made use of requestAnimationFrame, and recursive functions."
+    },
+    {
+      "title": "Interactive Resume (v2)",
+      "id": "p5",
+      "date": "Oct 2015",
+      "description": "Interactive resume version 2 using JavaScript, jQuery, JSON, Bootstrap and JavaScript Design Patterns (MV*).",
+      "image": "https://placeholdit.imgix.net/~text?txtsize=33&txt=Project&w=250&h=150",
+      "url": "https://github.com/reyesh/frontend-nanodegree-resume-refactor",
+      "mdID": "myp1",
+      "mdLabel": "myModalLabel1",
+      "mdImage": "../images/200x600-resume.png",
+      "alt": "image of resume project",
+      "mdDes": "Single-page, responsive application built with bootstrap framework, jquery and hosted on GitHub Pages. Developed scrolling message, project section expands according to your JSON object, added dynamic custom markers for the map based on places I lived and worked based on my JSON object."
     }
+
   ],
 
   "edu": [
@@ -141,7 +155,7 @@ var resumeData = {
       },
       {
           "name": "Fresno State University",
-          "url": "http://www.fresnostate.edu",          
+          "url": "http://www.fresnostate.edu/artshum/artanddesign/",          
           "location": "Fresno, CA, USA",
           "degree": "Bachelor of Arts",
           "date": "July 1998 - May 2003",
