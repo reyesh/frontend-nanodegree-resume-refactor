@@ -1,4 +1,4 @@
-  function mapsResume(){
+  function mapsResume(resumeData){
     console.log("in mapsResume function");
     /*
     This is the fun part. Here's where we generate the custom Google Map for the website.

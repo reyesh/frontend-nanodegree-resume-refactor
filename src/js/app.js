@@ -1,5 +1,12 @@
 var Engine = (function (global){
 
+	var haveSkill, haveWork, haveProj, haveEdu, haveConf = false;
+
+	var fbURL = "https://blistering-torch-1167.firebaseio.com";
+	var fbResume = "r1";
+	var myFb;
+	var resumeObj;
+
 	var octopus = {
 		getSectionData: function(section){
 			return resumeData[section];
@@ -7,25 +14,37 @@ var Engine = (function (global){
 
 		getSections: function(){
 			var section_names = [];
-			for (i in resumeData){
+			for (i in resumeObj){
 				section_names.push(i);
 			}
 			return section_names;
+		},
+
+		getResumeData: function(){
+			myFb = new Firebase(fbURL);
+			//Call back function to get resume data from firebase, after it's done it kicks off
+			//the rendering of the resume
+			myFb.child(fbResume).on("value", function(snapshot){
+				resumeObj = snapshot.val();  
+				console.log(octopus.getSections(resumeObj));	
+				view.renderStart();			
+			});
+
 		}
 
 	};
-
-	var haveSkill, haveWork, haveProj, haveEdu, haveConf = false;
-	var myFb;
 
 	var view = {
 
 
 		init: function(){
-			view.fbInit();
+			octopus.getResumeData();
+		},
+
+		renderStart: function(){
 			view.sectionOrder();
-			view.renderSkillFb();
-			//view.renderSections();
+			//view.renderSkillFb();
+			view.renderSections();
 			view.renderMap();
 		},
 
@@ -209,28 +228,16 @@ var Engine = (function (global){
 			
 			$("#main").append( view.secTemplate("Where I've Lived, Worked, Studied & Traveled", "mapDiv", "fa-map-marker", 2) );
 			$("#mapDiv").append('<div id="map"></div>');
-			 google.maps.event.addDomListener(window, 'load', mapsResume);
-
-		},
-		fbInit: function(){
-			myFb = new Firebase('https://blistering-torch-1167.firebaseio.com');
+			 google.maps.event.addDomListener(window, 'load', mapsResume(resumeObj));
 
 		},
 		renderSkillFb: function(){
 
-			myFb.child("r1/skill").on("value", function(snapshot) {
-				var skillObj = snapshot.val();  				
-				var formattedHTMLskill = "";
-
-				for(i in skillObj){
-					formattedHTMLskill = formattedHTMLskill + HTMLskills.replace("%data%", skillObj[i]);
-				}
-				formattedSkillStart = HTMLskillsStart.replace("%data%", formattedHTMLskill);
-
-				$("#count").append(skillObj.length);
-				$("#skill").append(formattedSkillStart);
-				view.renderEdu();   
-
+			myFb.child("r1").on("value", function(snapshot) {
+				//var skillObj = snapshot.val(); 
+				var resumeObj = snapshot.val();  				
+ 				console.log(resumeObj);
+	 
 			});
 
 		}
