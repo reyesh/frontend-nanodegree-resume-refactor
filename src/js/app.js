@@ -16,13 +16,16 @@ var Engine = (function (global){
 	};
 
 	var haveSkill, haveWork, haveProj, haveEdu, haveConf = false;
+	var myFb;
 
 	var view = {
 
 
 		init: function(){
+			view.fbInit();
 			view.sectionOrder();
-			view.renderSections();
+			view.renderSkillFb();
+			//view.renderSections();
 			view.renderMap();
 		},
 
@@ -207,6 +210,28 @@ var Engine = (function (global){
 			$("#main").append( view.secTemplate("Where I've Lived, Worked, Studied & Traveled", "mapDiv", "fa-map-marker", 2) );
 			$("#mapDiv").append('<div id="map"></div>');
 			 google.maps.event.addDomListener(window, 'load', mapsResume);
+
+		},
+		fbInit: function(){
+			myFb = new Firebase('https://blistering-torch-1167.firebaseio.com');
+
+		},
+		renderSkillFb: function(){
+
+			myFb.child("r1/skill").on("value", function(snapshot) {
+				var skillObj = snapshot.val();  				
+				var formattedHTMLskill = "";
+
+				for(i in skillObj){
+					formattedHTMLskill = formattedHTMLskill + HTMLskills.replace("%data%", skillObj[i]);
+				}
+				formattedSkillStart = HTMLskillsStart.replace("%data%", formattedHTMLskill);
+
+				$("#count").append(skillObj.length);
+				$("#skill").append(formattedSkillStart);
+				view.renderEdu();   
+
+			});
 
 		}
 
