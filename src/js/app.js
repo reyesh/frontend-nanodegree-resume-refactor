@@ -239,25 +239,30 @@ var Engine = (function (global){
 		},
 		renderJtron: function(){
 			var bioObj = octopus.getSectionData("bio");
-			formattedJtron = HTMLJtronImg.replace("%data%", resumeObj.bio.pic);
-			$(".jumbotron").children(".container").append(formattedJtron);
-			formattedJtronH1 = HTMLJtronH1.replace("%data%", resumeObj.bio.msg[0]);
-			$(".jumbotron").children(".container").append(formattedJtronH1);
+
 			formattedJtronP = HTMLJtronP.replace("%data%", resumeObj.bio.subMsg[0]);
-			$(".jumbotron").children(".container").append(formattedJtronP);
+			$(".jumbotron").children(".container").prepend(formattedJtronP);
+
+			formattedJtronH1 = HTMLJtronH1.replace("%data%", resumeObj.bio.msg[0]);
+			$(".jumbotron").children(".container").prepend(formattedJtronH1);
+
+			formattedJtron = HTMLJtronImg.replace("%data%", resumeObj.bio.pic);
+			$(".jumbotron").children(".container").prepend(formattedJtron);
+
 			for (i in bioObj.contacts){
 				formattedJtronBtn = HTMLJtronBtn.replace("%data%", bioObj.contacts[i].icon);
 				formattedJtronBtn = formattedJtronBtn.replace("%data2%", bioObj.contacts[i].data);
-				$(".jumbotron").children(".container").append(formattedJtronBtn);
+				$(".jumbotron").children(".container").children(".btn-group").append(formattedJtronBtn);
 			}
 		},
 		startJtronMsg: function(){
+			
+			var bioObj = octopus.getSectionData("bio");
 
 			setInterval(function(){
-				console.log("go go go");
-				var bioObj = octopus.getSectionData("bio");
 				var msg;
-				var x = Math.floor(Math.random()*(bioObj.msg.length) + 1);
+				var x = Math.floor(Math.random()*(bioObj.msg.length));
+				console.log("go go go: " + x);				
 				msg = $("#msg");
 				msg.text(bioObj.msg[x]);
 			}, 5000);

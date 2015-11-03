@@ -70,6 +70,16 @@
   font-size: 36px;
 }
 
+.jumbotron .container {
+  position: relative;
+  top: 200px;
+}
+
+.jumbotron h1 {
+  color: #e70b6f;
+  text-shadow: 1px 1px 7px #000000;
+}
+
 @media only screen and (max-width: 414px) {
   .jumbotron {
       background-image: url('../img/bkgnd-crowd-mobile-2x.png');
@@ -88,14 +98,14 @@
   }
 }
 
-.jumbotron .container {
-  position: relative;
-  top: 200px;
-}
-
-.jumbotron h1 {
-  color: #e70b6f;
-  text-shadow: 1px 1px 7px #000000;
+@media only screen and (max-width: 472px) {
+  #msg {
+    clear: both;
+  }
+  .jumbotron .container{
+    position: relative;
+    top: 60px;
+  }
 }
 
 .work-entry {

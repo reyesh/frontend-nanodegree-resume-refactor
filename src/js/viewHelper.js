@@ -36,8 +36,7 @@ var HTMLactivitiesTitle = '<p class="pull-left"><a href ="%data3%">%data%</a> - 
 var HTMLactivitiesDates = '<p class="pull-right">%data%</p>';
 
 // Jumbotron section HTML
-
-var HTMLJtron = '<div class="jumbotron" role="img" aria-label="a crowd cheering for Reyes"><div class="container"></div></div>';
+var HTMLJtron = '<div class="jumbotron" role="img" aria-label="a crowd cheering for Reyes"><div class="container"><div class="btn-group"></div></div></div>';
 var HTMLJtronImg = "<img class=\"profile-img\" src=\"data:image/png;base64,%data%\">";
 var HTMLJtronH1 = '<h1 id=\"msg\">%data%</h1>';
 var HTMLJtronP = "<p>%data%</p>";
@@ -48,7 +47,7 @@ var HTMLloadingModal = '<div class="modal fade bs-example-modal-sm" id="myModal"
       <div class="modal-dialog modal-sm" role="document">\
         <div class="modal-content">\
           <div class="modal-header">\
-            <h4 class="modal-title" id="myModalLabel">Loading ... </h4>\
+            <h4 class="modal-title" id="myModalLabel">Wait while I write my resume</h4>\
           </div>\
           <div class="modal-body text-center">\
               <div class="spinner-loader">\
