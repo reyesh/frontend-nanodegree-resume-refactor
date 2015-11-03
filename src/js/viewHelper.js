@@ -35,8 +35,15 @@ var HTMLactivitiesStart = '<div class="activities-entry"></div>';
 var HTMLactivitiesTitle = '<p class="pull-left"><a href ="%data3%">%data%</a> - <i>%data2%</i></p>';
 var HTMLactivitiesDates = '<p class="pull-right">%data%</p>';
 
-//Other
-var profileImg = "<img src=\"data:image/png;base64,%data%\">";
+// Jumbotron section HTML
+
+var HTMLJum = '<div class="jumbotron" role="img" aria-label="a crowd cheering for Reyes"><div class="container"></div></div>';
+var HTMLJumImg = "<img alt=\"profile-img\" src=\"data:image/png;base64,%data%\">";
+var HTMLJumH1 = "<h1>%data%</h1>";
+var HTMLJumP = "<p>%data%</p>";
+var HTMLJumBtn = "<a class=\"btn btn-info btn-lg\" href=\"#\" role=\"button\"><i class=\"fa %data%\"></i></a>";
+
+//Other HTML
 var HTMLloadingModal = '<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
       <div class="modal-dialog modal-sm" role="document">\
         <div class="modal-content">\
@@ -44,7 +51,7 @@ var HTMLloadingModal = '<div class="modal fade bs-example-modal-sm" id="myModal"
             <h4 class="modal-title" id="myModalLabel">Loading ... </h4>\
           </div>\
           <div class="modal-body text-center">\
-              <div class="throbber-loader">\
+              <div class="spinner-loader">\
                 Loading…\
               </div>\
           </div>\

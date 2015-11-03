@@ -24,43 +24,31 @@ var Engine = (function (global){
 			myFb = new Firebase(fbURL);
 			//Call back function to get resume data from firebase, after it's done it kicks off
 			//the rendering of the resume
-			$(".progress-bar").width("90%");
 			myFb.child(fbResume).on("value", function(snapshot){
-				$(".progress-bar").width("95%");
 				resumeObj = snapshot.val();  
 				view.renderStart();
-			
 			});
-
 		}
 
 	};
 
 	var view = {
 
-
 		init: function(){
-			//myApp.showPleaseWait();
-			//$("#myp1").modal('show');
+			//Set the loading modal and show it
+			$("#main").append(HTMLloadingModal);
 			$('#myModal').modal('show');
-			//$('#myModal').modal('toggle');
-
 			octopus.getResumeData();
-
 		},
 
 		renderStart: function(){
-
 			view.sectionOrder();
-			//view.renderSkillFb();
 			view.renderSections();
+			//Hide the loading modal
 			$('#myModal').modal('hide');
 			view.renderMap();
 			formattedPic = profileImg.replace("%data%", resumeObj.bio.pic);
 			$("#main").append(formattedPic);
-			$(".progress-bar").width("100%");
-
-
 		},
 
 		renderSections: function(){
@@ -259,20 +247,6 @@ var Engine = (function (global){
 
 	};
 
-	var myApp;
-	myApp = myApp || (function () {
-	    var pleaseWaitDiv = $('<div class="modal fade" id="pleaseWaitDialog" data-backdrop="static" data-keyboard="false"><div class="modal-header"><h1>Processing...</h1></div><div class="modal-body"><div class="progress progress-striped active"><div class="bar" style="width: 100%;"></div></div></div></div>');
-	    return {
-	        showPleaseWait: function() {
-	            pleaseWaitDiv.modal();
-	        },
-	        hidePleaseWait: function () {
-	            pleaseWaitDiv.modal('hide');
-	        },
-
-	    };
-	})();
-	//myApp.showPleaseWait();
 	view.init();
 
 })(this);
