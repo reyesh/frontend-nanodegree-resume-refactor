@@ -34,3 +34,21 @@ var HTMLschoolhighlightBp = '<li>%data%</li>';
 var HTMLactivitiesStart = '<div class="activities-entry"></div>';
 var HTMLactivitiesTitle = '<p class="pull-left"><a href ="%data3%">%data%</a> - <i>%data2%</i></p>';
 var HTMLactivitiesDates = '<p class="pull-right">%data%</p>';
+
+//Other
+var profileImg = "<img src=\"data:image/png;base64,%data%\">";
+var HTMLloadingModal = '<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
+      <div class="modal-dialog modal-sm" role="document">\
+        <div class="modal-content">\
+          <div class="modal-header">\
+            <h4 class="modal-title" id="myModalLabel">Loading ... </h4>\
+          </div>\
+          <div class="modal-body text-center">\
+              <div class="throbber-loader">\
+                Loading…\
+              </div>\
+          </div>\
+        </div>\
+      </div>\
+    </div>';
+
