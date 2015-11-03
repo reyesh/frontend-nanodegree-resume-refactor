@@ -66,7 +66,7 @@
         locations.jobs = [];
 
         // puts my current location into the bio object
-        locations.bio[0] = { "location":resumeData.bio.contacts.location,
+        locations.bio[0] = { "location":resumeData.bio.contacts.location.data,
                              "name": "Currently Live Here"};
         //console.log(resumeData.bio.contacts.location);
         // iterates through school and added the location plus name of school

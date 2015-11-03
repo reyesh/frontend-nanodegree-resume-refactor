@@ -5,11 +5,12 @@ var Engine = (function (global){
 	var fbURL = "https://blistering-torch-1167.firebaseio.com";
 	var fbResume = "r1";
 	var myFb;
+	// The resume object from firebase in stored in this variable
 	var resumeObj;
 
 	var octopus = {
 		getSectionData: function(section){
-			return resumeData[section];
+			return resumeObj[section];
 		},
 
 		getSections: function(){
@@ -38,17 +39,19 @@ var Engine = (function (global){
 			//Set the loading modal and show it
 			$("#main").append(HTMLloadingModal);
 			$('#myModal').modal('show');
+			//Get resume object from firebase
 			octopus.getResumeData();
 		},
 
 		renderStart: function(){
+			view.renderJtron();
 			view.sectionOrder();
 			view.renderSections();
 			//Hide the loading modal
 			$('#myModal').modal('hide');
 			view.renderMap();
-			formattedPic = profileImg.replace("%data%", resumeObj.bio.pic);
-			$("#main").append(formattedPic);
+			view.startJtronMsg();
+
 		},
 
 		renderSections: function(){
@@ -234,15 +237,31 @@ var Engine = (function (global){
 			 google.maps.event.addDomListener(window, 'load', mapsResume(resumeObj));
 
 		},
-		renderSkillFb: function(){
+		renderJtron: function(){
+			var bioObj = octopus.getSectionData("bio");
+			formattedJtron = HTMLJtronImg.replace("%data%", resumeObj.bio.pic);
+			$(".jumbotron").children(".container").append(formattedJtron);
+			formattedJtronH1 = HTMLJtronH1.replace("%data%", resumeObj.bio.msg[0]);
+			$(".jumbotron").children(".container").append(formattedJtronH1);
+			formattedJtronP = HTMLJtronP.replace("%data%", resumeObj.bio.subMsg[0]);
+			$(".jumbotron").children(".container").append(formattedJtronP);
+			for (i in bioObj.contacts){
+				formattedJtronBtn = HTMLJtronBtn.replace("%data%", bioObj.contacts[i].icon);
+				formattedJtronBtn = formattedJtronBtn.replace("%data2%", bioObj.contacts[i].data);
+				$(".jumbotron").children(".container").append(formattedJtronBtn);
+			}
+		},
+		startJtronMsg: function(){
 
-			myFb.child("r1").on("value", function(snapshot) {
-				//var skillObj = snapshot.val(); 
-				var resumeObj = snapshot.val();  				
- 				console.log(resumeObj);
-	 
-			});
-
+			setInterval(function(){
+				console.log("go go go");
+				var bioObj = octopus.getSectionData("bio");
+				var msg;
+				var x = Math.floor(Math.random()*(bioObj.msg.length) + 1);
+				msg = $("#msg");
+				msg.text(bioObj.msg[x]);
+			}, 5000);
+			
 		}
 
 	};

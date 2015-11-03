@@ -37,11 +37,11 @@ var HTMLactivitiesDates = '<p class="pull-right">%data%</p>';
 
 // Jumbotron section HTML
 
-var HTMLJum = '<div class="jumbotron" role="img" aria-label="a crowd cheering for Reyes"><div class="container"></div></div>';
-var HTMLJumImg = "<img alt=\"profile-img\" src=\"data:image/png;base64,%data%\">";
-var HTMLJumH1 = "<h1>%data%</h1>";
-var HTMLJumP = "<p>%data%</p>";
-var HTMLJumBtn = "<a class=\"btn btn-info btn-lg\" href=\"#\" role=\"button\"><i class=\"fa %data%\"></i></a>";
+var HTMLJtron = '<div class="jumbotron" role="img" aria-label="a crowd cheering for Reyes"><div class="container"></div></div>';
+var HTMLJtronImg = "<img class=\"profile-img\" src=\"data:image/png;base64,%data%\">";
+var HTMLJtronH1 = '<h1 id=\"msg\">%data%</h1>';
+var HTMLJtronP = "<p>%data%</p>";
+var HTMLJtronBtn = "<a class=\"btn btn-info btn-lg\" href=\"%data2%\" target=\"_blank\" role=\"button\"><i class=\"fa %data%\"></i></a>";
 
 //Other HTML
 var HTMLloadingModal = '<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
