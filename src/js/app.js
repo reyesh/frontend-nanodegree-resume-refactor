@@ -15,7 +15,7 @@ var Engine = (function (global){
 
 		getSections: function(){
 			var section_names = [];
-			for (i in resumeObj){
+			for (var i in resumeObj){
 				section_names.push(i);
 			}
 			return section_names;
@@ -106,7 +106,7 @@ var Engine = (function (global){
 
 			var sections = octopus.getSections();
 
-			for (i in sections){
+			for (var i in sections){
 
 				switch (sections[i]) {
 				    case "skill":
@@ -143,7 +143,7 @@ var Engine = (function (global){
 			var skillObj = octopus.getSectionData("skill");
 			var formattedHTMLskill = "";
 
-			for(i in skillObj){
+			for(var i in skillObj){
 				formattedHTMLskill = formattedHTMLskill + HTMLskills.replace("%data%", skillObj[i]);
 			}
 			formattedSkillStart = HTMLskillsStart.replace("%data%", formattedHTMLskill);
@@ -154,7 +154,7 @@ var Engine = (function (global){
 
 		renderWork: function(){
 			var workObj = octopus.getSectionData("work");
-			for(i in workObj){
+			for(var i in workObj){
 				var formattedWorkBpli = "";
 				$("#work").append(HTMLworkStart);
 				formattedEmployer = HTMLworkEmployer.replace("%data%", workObj[i].employer);
@@ -165,7 +165,7 @@ var Engine = (function (global){
   			    formattedDes = HTMLworkDescription.replace("%data%", workObj[i].description);
 
   			    //loop for bullet points
-  			    for(j in workObj[i].bp){
+  			    for(var j in workObj[i].bp){
   			    	 formattedWorkBpli =  formattedWorkBpli + HTMLworkBpli.replace("%data%", workObj[i].bp[j]);
   			    }  			    
   			    formattedWorkBP = HTMLworkBpul.replace("%data%", formattedWorkBpli);
@@ -179,7 +179,7 @@ var Engine = (function (global){
 			var eduObj = octopus.getSectionData("edu");
 			var formattedEduEntry = "";
 			var formattedHlBp = "";
-			for(i in eduObj){
+			for(var i in eduObj){
 				$("#edu").append(HTMLschoolStart);
 				formattedEduName =  HTMLschoolName.replace("%data%", eduObj[i].name);
 				formattedEduName = 	formattedEduName.replace("%data2%", eduObj[i].url);
@@ -191,7 +191,7 @@ var Engine = (function (global){
 
 				//clear this variable after even loop
 				formattedHlBp = "";
-				for (j in eduObj[i].bp){
+				for (var j in eduObj[i].bp){
 					console.log(i+" "+eduObj[i].bp[j]);
 					formattedHlBp = formattedHlBp + HTMLschoolhighlightBp.replace("%data%", eduObj[i].bp[j]);
 				}
@@ -205,7 +205,7 @@ var Engine = (function (global){
 		renderProj: function(){
 			var projObj = octopus.getSectionData("project");
 			var formattedProjectStart = "";
-			for(i in projObj){
+			for(var i in projObj){
 				formattedProjectStart = HTMLprojectStart.replace("%data%", projObj[i].id);
 				$("#proj").append(formattedProjectStart);
 				formattedProjectTitle = HTMLprojectTitle.replace("%data%", projObj[i].title);
@@ -220,7 +220,7 @@ var Engine = (function (global){
 
 		renderConf: function(){
 			var confObj = octopus.getSectionData("conf");
-			for(i in confObj){
+			for(var i in confObj){
 				$("#conf").append(HTMLactivitiesStart);
 				formattedActTitle = HTMLactivitiesTitle.replace("%data%", confObj[i].title);
 				formattedActTitle = formattedActTitle.replace("%data2%", confObj[i].level);
@@ -249,7 +249,7 @@ var Engine = (function (global){
 			formattedJtron = HTMLJtronImg.replace("%data%", resumeObj.bio.pic);
 			$(".jumbotron").children(".container").prepend(formattedJtron);
 
-			for (i in bioObj.contacts){
+			for (var i in bioObj.contacts){
 				formattedJtronBtn = HTMLJtronBtn.replace("%data%", bioObj.contacts[i].icon);
 				formattedJtronBtn = formattedJtronBtn.replace("%data2%", bioObj.contacts[i].data);
 				$(".jumbotron").children(".container").children(".btn-group").append(formattedJtronBtn);

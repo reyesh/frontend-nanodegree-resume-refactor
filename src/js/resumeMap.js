@@ -77,7 +77,7 @@
                                "location": resumeData.bio.travel[i] };
         }
 
-        for(var i=0;i<resumeData.edu.length;i++){
+        for(i=0;i<resumeData.edu.length;i++){
           locations.schools[i]={"name":resumeData.edu[i].name,
                                "location":resumeData.edu[i].location};
         }
@@ -85,7 +85,7 @@
         // iterates through jobs and added the location plus employer's name
         // to the jobs object
 
-        for(var i=0;i<resumeData.work.length;i++){
+        for(i=0;i<resumeData.work.length;i++){
           locations.jobs[i] = {"name":resumeData.work[i].employer,
                                "location":resumeData.work[i].location};
         }
@@ -198,8 +198,8 @@
         var service = new google.maps.places.PlacesService(map);
 
         // Iterates through the array of locations, creates a search object for each location
-        for (objects in locations) {
-            for (place in locations[objects]) {
+        for (var objects in locations) {
+            for (var place in locations[objects]) {
               // the search request object
               var request = {
                 query: locations[objects][place].location
@@ -240,4 +240,4 @@
       // Make sure the map bounds get updated on page resize
       map.fitBounds(mapBounds);
     });
-  };
+  }

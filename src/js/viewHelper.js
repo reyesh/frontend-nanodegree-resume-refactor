@@ -43,18 +43,4 @@ var HTMLJtronP = "<p>%data%</p>";
 var HTMLJtronBtn = "<a class=\"btn btn-info btn-lg\" href=\"%data2%\" target=\"_blank\" role=\"button\"><i class=\"fa %data%\"></i></a>";
 
 //Other HTML
-var HTMLloadingModal = '<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">\
-      <div class="modal-dialog modal-sm" role="document">\
-        <div class="modal-content">\
-          <div class="modal-header">\
-            <h4 class="modal-title" id="myModalLabel">Wait while I write my resume</h4>\
-          </div>\
-          <div class="modal-body text-center">\
-              <div class="spinner-loader">\
-                Loading…\
-              </div>\
-          </div>\
-        </div>\
-      </div>\
-    </div>';
-
+var HTMLloadingModal = '<div class="modal fade bs-example-modal-sm" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"><div class="modal-dialog modal-sm" role="document"><div class="modal-content"><div class="modal-header"><h4 class="modal-title" id="myModalLabel">Wait while I write my resume</h4></div><div class="modal-body text-center"><div class="spinner-loader">Loading…</div></div></div></div></div>';
