@@ -17,21 +17,34 @@ module.exports = function(grunt) {
             }
           },
         uglify: {
-			build: {
-				src: 'src/tmp/resumeApp.js',
-				dest: 'src/tmp/resumeApp.min.js'
-			}
-		},
-		cssmin:{
+      			build: {
+      				src: 'src/tmp/resumeApp.js',
+      				dest: 'src/tmp/resumeApp.min.js'
+      			}
+	     	},
+
+        css_url_replace: {
+          options: {
+            staticRoot: 'src'
+          },
+          replace: {
+            files: {
+              'src/tmp/style.urlr.css': ['src/css/style.css']
+            }
+          }
+        }, 
+
+		    cssmin:{
            dist: {
               options: {
                  banner: ''
               },
               files: {
-                 'src/tmp/style.min.css': ['src/css/style.css']
+                 'src/tmp/style.min.css': ['src/tmp/style.urlr.css']
               }
           }
         },
+       
         processhtml: {
           options: {
             data: {
@@ -48,5 +61,5 @@ module.exports = function(grunt) {
 	});
 
 
-    grunt.registerTask('default', ['jshint', 'concat','uglify','cssmin','processhtml']);
+    grunt.registerTask('default', ['jshint', 'concat','uglify','css_url_replace','cssmin','processhtml']);
 };

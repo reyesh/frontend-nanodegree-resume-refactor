@@ -82,19 +82,19 @@
 
 @media only screen and (max-width: 414px) {
   .jumbotron {
-      background-image: url('../img/bkgnd-crowd-mobile-2x.png');
+      background-image:url('../img/bkgnd-crowd-mobile-2x.png');
   }
 }
 
 @media screen and (min-width: 415px) and (max-width: 1024px) {
   .jumbotron {
-      background-image: url('../img/bkgnd-crowd-tablet-2x.png');
+      background-image:url('../img/bkgnd-crowd-tablet-2x.png');
   }
 }
 
 @media screen and (min-width: 1025px) {
   .jumbotron {
-      background-image: url('../img/bkgnd-crowd-desktop-2x.png');
+      background-image:url('../img/bkgnd-crowd-desktop-2x.png');
   }
 }
 
