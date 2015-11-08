@@ -379,7 +379,7 @@ var Engine = (function (global){
 			hTag.innerHTML = name;
 
 			if(idx == "skill"){
-				console.log("this is a skill");
+				// need for the bootstrap badge in skill's section
 				var cSpan = document.createElement('span');
 				cSpan.id = "count";
 				cSpan.className = "badge";
@@ -392,40 +392,44 @@ var Engine = (function (global){
 
 		},
 
-		sectionOrder: function(){
+		hasSection: function(sec){
 
 			var sections = octopus.getSections();
 
 			for (var i in sections){
-
-				switch (sections[i]) {
-				    case "skill":
-				    	haveSkill = true;
-						$("#main").append( view.secTemplate("Skills ", "skill", "fa-wrench", 3) );
-				        break;
-
-				    case "project":
-				    	haveProj = true;
-						$("#main").append( view.secTemplate("Projects", "proj", "fa-file-code-o", 2) );
-				        break;
-
-				    case "work":
-				    	haveWork = true;
-						$("#main").append( view.secTemplate("Work Experience", "work", "fa-briefcase", 2) );
-				        break;
-
-				    case "edu":
-				    	haveEdu = true;
-						$("#main").append( view.secTemplate("Education", "edu", "fa-book", 2) );
-						break;
-
-				    case "conf":
-				    	haveConf = true;
-						$("#main").append( view.secTemplate("Activities", "conf", "fa-users", 2) );
-				        break;		        
+				if ( sections[i] == sec){
+					return true;
 				}
-
 			}
+			return false;
+		},
+
+		sectionOrder: function(){
+
+			if ( view.hasSection("skill") ){
+		    	haveSkill = true;
+				$("#main").append( view.secTemplate("Skills ", "skill", "fa-wrench", 3) );	
+			}
+
+			if ( view.hasSection("project") ){
+		    	haveProj = true;
+				$("#main").append( view.secTemplate("Projects", "proj", "fa-file-code-o", 2) );
+			}
+
+			if ( view.hasSection("edu") ){
+		    	haveEdu = true;
+				$("#main").append( view.secTemplate("Education", "edu", "fa-book", 2) );	
+			}
+
+			if ( view.hasSection("work") ){
+		    	haveWork = true;
+				$("#main").append( view.secTemplate("Work Experience", "work", "fa-briefcase", 2) );
+			}
+
+			if ( view.hasSection("conf") ){
+				haveConf = true;
+				$("#main").append( view.secTemplate("Activities", "conf", "fa-users", 2) );
+			}	
 
 		},
 
