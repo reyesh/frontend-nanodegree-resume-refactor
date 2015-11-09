@@ -25,7 +25,7 @@ module.exports = function(grunt) {
 
         css_url_replace: {
           options: {
-            staticRoot: 'src'
+            staticRoot: 'src/img'
           },
           replace: {
             files: {
@@ -34,13 +34,30 @@ module.exports = function(grunt) {
           }
         }, 
 
+        cssUrlRewrite: {
+          dist: {
+            src: "src/css/style.css",
+            dest: "src/tmp/style.urlrw.css",
+            options: {
+              skipExternal: true,
+              rewriteUrl: function(url, options, dataURI) {
+                var path = url.replace(options.baseDir, '');
+                path = url.replace("src/", '');
+
+                var hash = require('crypto').createHash('md5').update(dataURI).digest('hex');
+                return '' + path;
+              }
+            }
+          }
+        },  
+
 		    cssmin:{
            dist: {
               options: {
                  banner: ''
               },
               files: {
-                 'src/tmp/style.min.css': ['src/tmp/style.urlr.css']
+                 'src/tmp/style.min.css': ['src/tmp/style.urlrw.css']
               }
           }
         },
@@ -61,5 +78,5 @@ module.exports = function(grunt) {
 	});
 
 
-    grunt.registerTask('default', ['jshint', 'concat','uglify','css_url_replace','cssmin','processhtml']);
+    grunt.registerTask('default', ['jshint', 'concat','uglify','css_url_replace','cssUrlRewrite','cssmin','processhtml']);
 };
