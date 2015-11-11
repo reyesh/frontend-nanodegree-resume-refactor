@@ -2,10 +2,11 @@ var Engine = (function (global){
 
 	var haveSkill, haveWork, haveProj, haveEdu, haveConf = false;
 
+	//Firebase parameters
 	var fbURL = "https://blistering-torch-1167.firebaseio.com";
 	var fbResume = "r1";
 	var myFb;
-	// The resume object from firebase in stored in this variable
+	// The resume object from firebase is stored in this variable
 	var resumeObj;
 
 	var octopus = {
@@ -36,19 +37,39 @@ var Engine = (function (global){
 	var view = {
 
 		init: function(){
-			//Set the loading modal and show it
-			$("#main").append(HTMLloadingModal);
-			$('#myModal').modal('show');
+			view.startLoading();
 			//Get resume object from firebase
 			octopus.getResumeData();
 		},
 
+		startLoading: function(){
+			$("#modals").append(HTMLloadingModal);
+			$('#myModal').modal('show');
+		},
+
+		endLoading: function(){
+			$('#myModal').modal('hide');
+		},
+
+		eraseResume: function(){
+
+			// Erasing Jumbotron
+			$('.jumbotron .container .btn-group').empty();
+			var divBtnG = $('.jumbotron .container').detach();
+			$('.jumbotron').empty();
+			$('.jumbotron').append(divBtnG);
+
+			// Erasing main
+			$('#main').empty();
+		},
+
 		renderStart: function(){
+
+			view.eraseResume();
 			view.renderJtron();
 			view.sectionOrder();
 			view.renderSections();
-			//Hide the loading modal
-			$('#myModal').modal('hide');
+			view.endLoading();
 			view.renderMap();
 			view.startJtronMsg();
 
