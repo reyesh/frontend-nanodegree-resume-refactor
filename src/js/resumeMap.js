@@ -1,5 +1,4 @@
   function mapsResume(resumeData){
-    console.log("in mapsResume function");
     /*
     This is the fun part. Here's where we generate the custom Google Map for the website.
     See the documentation below for more details.
@@ -24,7 +23,6 @@
       // <div id="map">, which is appended as part of an exercise late in the course.
       map = new google.maps.Map(document.querySelector('#map'), mapOptions);
       // make the map undraggable
-      console.log("selected #map!");
       map.setOptions({draggable: false, zoomControl: false, scrollwheel: false, disableDoubleClickZoom: true});
 
 
@@ -36,7 +34,6 @@
 
         // initializes an empty array
         var locations = [];
-        console.log(resumeData.bio.travel);
         // adds the single location property from bio to the locations array
         //locations.push(bio.contacts.location);
         locations.push(resumeData.bio.travel);
@@ -89,7 +86,6 @@
           locations.jobs[i] = {"name":resumeData.work[i].employer,
                                "location":resumeData.work[i].location};
         }
-        console.log(locations);
         return locations;
       }
 
@@ -154,15 +150,12 @@
 
           for (var objects in locationsObj) {
               for (var place in locationsObj[objects]) {
-                console.log(locationsObj[objects][place].location.replace(/\+/g, " ") + " " + results[0].formatted_address);
-
                     if(locationsObj[objects][place].location.replace(/\+/g, " ")==results[0].formatted_address){
                        locationsObj[objects][place].lat = results[0].geometry.location.lat();
                        locationsObj[objects][place].lng = results[0].geometry.location.lng();
                     }
                 }
           }
-          console.log(locationsObj);
           createMapMarker(results[0]);
         }
       }

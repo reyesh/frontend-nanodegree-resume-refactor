@@ -25,7 +25,7 @@ var Engine = (function (global){
 		getResumeData: function(){
 			myFb = new Firebase(fbURL);
 			//Call back function to get resume data from firebase, after it's done it kicks off
-			//the rendering of the resume
+			//the rendering of the resume, this callback is ran everytime the data changes
 			myFb.child(fbResume).on("value", function(snapshot){
 				resumeObj = snapshot.val();  
 				view.renderStart();
@@ -52,13 +52,10 @@ var Engine = (function (global){
 		},
 
 		eraseResume: function(){
-
 			// Erasing Jumbotron
-			$('.jumbotron .container .btn-group').empty();
-			var divBtnG = $('.jumbotron .container').detach();
-			$('.jumbotron').empty();
-			$('.jumbotron').append(divBtnG);
-
+			var divBtnG = $('.jumbotron .container .btn-group').empty().detach();
+			$('.jumbotron .container').empty();
+			$('.jumbotron .container').append(divBtnG);
 			// Erasing main
 			$('#main').empty();
 		},
@@ -217,7 +214,6 @@ var Engine = (function (global){
 				//clear this variable after even loop
 				formattedHlBp = "";
 				for (var j in eduObj[i].bp){
-					console.log(i+" "+eduObj[i].bp[j]);
 					formattedHlBp = formattedHlBp + HTMLschoolhighlightBp.replace("%data%", eduObj[i].bp[j]);
 				}
 				formattedHlUL = HTMLschoolhighlight.replace("%data%", formattedHlBp);
@@ -287,7 +283,6 @@ var Engine = (function (global){
 			setInterval(function(){
 				var msg;
 				var x = Math.floor(Math.random()*(bioObj.msg.length));
-				console.log("go go go: " + x);				
 				msg = $("#msg");
 				msg.text(bioObj.msg[x]);
 			}, 5000);
