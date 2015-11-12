@@ -347,9 +347,9 @@ var Engine = (function (global){
 
 			view.eraseResume();
 			view.renderJtron();
+			view.endLoading();
 			view.sectionOrder();
 			view.renderSections();
-			view.endLoading();
 			view.renderMap();
 			view.startJtronMsg();
 
