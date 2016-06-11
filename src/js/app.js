@@ -8,6 +8,7 @@ var Engine = (function (global){
 	var myFb;
 	// The resume object from firebase is stored in this variable
 	var resumeObj;
+	var intervalID;
 
 	var octopus = {
 		getSectionData: function(section){
@@ -279,8 +280,9 @@ var Engine = (function (global){
 		startJtronMsg: function(){
 			
 			var bioObj = octopus.getSectionData("bio");
-
-			setInterval(function(){
+			clearInterval(intervalID);
+			
+			intervalID  = setInterval(function(){
 				var msg;
 				var x = Math.floor(Math.random()*(bioObj.msg.length));
 				msg = $("#msg");
