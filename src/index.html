@@ -8,15 +8,24 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <!-- /build -->
   <!-- build:css inline tmp/bootstrap.min.css -->
-  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
   <!-- /build -->  
   <!-- build:js inline tmp/bootstrap.min.js -->
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
   <!-- /build -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 
-  <script src="https://cdn.firebase.com/js/client/2.3.1/firebase.js"></script>
-
+  <script src="https://www.gstatic.com/firebasejs/3.0.4/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyBQvF3PNZiuzDUrGf5iw2y3zIyAqvza3KY",
+      authDomain: "blistering-torch-1167.firebaseapp.com",
+      databaseURL: "https://blistering-torch-1167.firebaseio.com",
+      storageBucket: "blistering-torch-1167.appspot.com",
+    };
+    firebase.initializeApp(config);
+  </script>
   <!-- build:css inline tmp/style.min.css -->
   <link href="css/style.css" rel="stylesheet" type="text/css">
   <!-- /build -->
@@ -74,7 +83,7 @@
 
   <div id="modals">
   </div>
-  <script src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?libraries=places&key=AIzaSyBQvF3PNZiuzDUrGf5iw2y3zIyAqvza3KY"></script>
   <!-- build:js inline tmp/resumeApp.min.js -->
   <script src="js/resumeMap.js"></script>
   <script src="js/viewHelper.js"></script>
