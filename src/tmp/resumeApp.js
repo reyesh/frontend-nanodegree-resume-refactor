@@ -285,12 +285,12 @@ var Engine = (function (global){
 
 	var haveSkill, haveWork, haveProj, haveEdu, haveConf = false;
 
-	//Firebase parameters
-	var fbURL = "https://blistering-torch-1167.firebaseio.com";
-	var fbResume = "r1";
-	var myFb;
+	//Firebase 3.0 reference
+	var fbRef = firebase.database().ref("r1");
+
 	// The resume object from firebase is stored in this variable
 	var resumeObj;
+	var intervalID;
 
 	var octopus = {
 		getSectionData: function(section){
@@ -306,11 +306,10 @@ var Engine = (function (global){
 		},
 
 		getResumeData: function(){
-			myFb = new Firebase(fbURL);
 			//Call back function to get resume data from firebase, after it's done it kicks off
 			//the rendering of the resume, this callback is ran everytime the data changes
-			myFb.child(fbResume).on("value", function(snapshot){
-				resumeObj = snapshot.val();  
+			fbRef.on("value", function(snapshot){
+				resumeObj = snapshot.val();
 				view.renderStart();
 			});
 		}
@@ -562,8 +561,9 @@ var Engine = (function (global){
 		startJtronMsg: function(){
 			
 			var bioObj = octopus.getSectionData("bio");
-
-			setInterval(function(){
+			clearInterval(intervalID);
+			
+			intervalID  = setInterval(function(){
 				var msg;
 				var x = Math.floor(Math.random()*(bioObj.msg.length));
 				msg = $("#msg");
